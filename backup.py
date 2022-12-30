@@ -13,7 +13,7 @@ while True:
     filename = f"{DATABASE_NAME}_{now:%Y-%m-%d_%H-%M-%S}.sql"
     filepath = os.path.join(BACKUP_DIRECTORY, filename)
 
-    command = f"mysqldump -h {MYSQL_HOST} -u {MYSQL_USERNAME} -p{MYSQL_PASSWORD} {DATABASE_NAME} > {filepath}"
+    command = f"mysqldump -h {MYSQL_HOST} -u {MYSQL_USERNAME} {DATABASE_NAME} > {filepath}"
     os.system(command)
 
     time.sleep(BACKUP_INTERVAL)
